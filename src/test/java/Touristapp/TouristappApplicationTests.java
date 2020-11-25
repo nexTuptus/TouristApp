@@ -1,4 +1,4 @@
-package solo.projects.Touristapp;
+package Touristapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
