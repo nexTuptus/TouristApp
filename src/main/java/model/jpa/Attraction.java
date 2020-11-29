@@ -1,18 +1,21 @@
 package model.jpa;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Getter
 @Setter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class Attraction {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
@@ -23,17 +26,6 @@ public class Attraction {
     private Address attractionAddress;
 
     @OneToMany(mappedBy = "attraction")
-    private List<AttractionRating> ratings;
+    private List<AttractionRating> ratings = new ArrayList<>();
 
-    public Attraction() {
-    }
-
-    public Attraction(Long id, String name, Enum<AttractionType> attractionType, String description, Address attractionAddress, List<AttractionRating> ratings) {
-        this.id = id;
-        this.name = name;
-        this.attractionType = attractionType;
-        this.description = description;
-        this.attractionAddress = attractionAddress;
-        this.ratings = ratings;
-    }
 }

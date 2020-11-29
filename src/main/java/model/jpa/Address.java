@@ -1,14 +1,17 @@
 package model.jpa;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Getter
 @Setter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class Address {
 
     @Id
@@ -20,21 +23,9 @@ public class Address {
     private String locality;
 
     @OneToMany(mappedBy = "userAddress")
-    private List<User> users;
+    private List<User> users = new ArrayList<>();
 
     @OneToMany(mappedBy = "attractionAddress")
-    private List<Attraction> attractions;
+    private List<Attraction> attractions = new ArrayList<>();
 
-    public Address() {
-    }
-
-    public Address(Long id, String voivodeship, String community, String locality,
-                   List<User> users, List<Attraction> attractions) {
-        this.id = id;
-        this.voivodeship = voivodeship;
-        this.community = community;
-        this.locality = locality;
-        this.users = users;
-        this.attractions = attractions;
-    }
 }

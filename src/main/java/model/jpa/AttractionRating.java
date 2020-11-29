@@ -1,17 +1,20 @@
 package model.jpa;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Getter
 @Setter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class AttractionRating {
 
-    @EmbeddedId
-    private AttractionRatingKey id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @ManyToOne
     @MapsId("userId")
@@ -23,15 +26,7 @@ public class AttractionRating {
     @JoinColumn(name = "attraction_id")
     private Attraction attraction;
 
-    private int rating;
+    private Enum<Rating> rating;
+    private String opinion;
 
-    public AttractionRating() {
-    }
-
-    public AttractionRating(AttractionRatingKey id, User user, Attraction attraction, int rating) {
-        this.id = id;
-        this.user = user;
-        this.attraction = attraction;
-        this.rating = rating;
-    }
 }

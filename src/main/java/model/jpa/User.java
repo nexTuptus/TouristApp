@@ -1,14 +1,17 @@
 package model.jpa;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Getter
 @Setter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
 
     @Id
@@ -23,18 +26,6 @@ public class User {
     private Address userAddress;
 
     @OneToMany(mappedBy = "user")
-    private List<AttractionRating> ratings;
+    private List<AttractionRating> ratings = new ArrayList<>();
 
-    public User() {
-    }
-
-    public User(Long id, String username, String password, String email,
-                Address userAddress, List<AttractionRating> ratings) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.email = email;
-        this.userAddress = userAddress;
-        this.ratings = ratings;
-    }
 }
