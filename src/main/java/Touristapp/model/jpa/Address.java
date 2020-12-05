@@ -1,4 +1,4 @@
-package model.jpa;
+package Touristapp.model.jpa;
 
 import lombok.*;
 
@@ -16,6 +16,7 @@ public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "address_id")
     private Long id;
 
     private String voivodeship;

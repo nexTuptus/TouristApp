@@ -1,11 +1,11 @@
-package service;
+package Touristapp.service;
 
+import Touristapp.repository.AddressRepository;
 import lombok.AllArgsConstructor;
-import model.dto.AddressDTO;
-import model.jpa.Address;
+import Touristapp.model.dto.AddressDTO;
+import Touristapp.model.jpa.Address;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-import repository.AddressRepository;
 
 import java.util.List;
 import java.util.stream.Collectors;

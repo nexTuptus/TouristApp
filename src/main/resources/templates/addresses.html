@@ -16,7 +16,7 @@
         </thead>
         <tbody>
             <tr th:each="address : ${addressList}">
-                < type="number" th:text="${address.id}"/>
+                <td type="number" th:text="${address.id}"/>
                 <td th:text="${address.voivodeship}"/>
                 <td th:text="${address.community}"/>
                 <td th:text="${address.locality}"/>

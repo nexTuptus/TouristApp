@@ -1,8 +1,8 @@
-package model.dto;
+package Touristapp.model.dto;
 
 import lombok.Getter;
 import lombok.Setter;
-import model.jpa.AttractionType;
+import Touristapp.model.jpa.AttractionType;
 
 import java.util.ArrayList;
 import java.util.List;

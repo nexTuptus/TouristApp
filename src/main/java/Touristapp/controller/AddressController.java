@@ -1,14 +1,16 @@
-package controller;
+package Touristapp.controller;
 
-import model.dto.AddressDTO;
+import Touristapp.service.AddressService;
+import lombok.AllArgsConstructor;
+import Touristapp.model.dto.AddressDTO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
-import service.AddressService;
 
 import java.util.List;
 
 @Controller
+@AllArgsConstructor
 public class AddressController {
 
     private AddressService addressService;

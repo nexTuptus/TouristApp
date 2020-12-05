@@ -1,6 +1,6 @@
-package repository;
+package Touristapp.repository;
 
-import model.jpa.Address;
+import Touristapp.model.jpa.Address;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AddressRepository extends JpaRepository<Address, Long> {

@@ -1,4 +1,4 @@
-package model.jpa;
+package Touristapp.model.jpa;
 
 import lombok.*;
 

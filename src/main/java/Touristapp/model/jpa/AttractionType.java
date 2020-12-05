@@ -1,4 +1,4 @@
-package model.jpa;
+package Touristapp.model.jpa;
 
 public enum AttractionType {
     NATIONAL_PARK,

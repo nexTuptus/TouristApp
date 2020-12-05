@@ -1,8 +1,8 @@
-package model.dto;
+package Touristapp.model.dto;
 
 import lombok.Getter;
 import lombok.Setter;
-import model.jpa.Rating;
+import Touristapp.model.jpa.Rating;
 
 @Getter
 @Setter

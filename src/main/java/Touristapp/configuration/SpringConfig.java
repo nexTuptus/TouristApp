@@ -1,4 +1,4 @@
-package configuration;
+package Touristapp.configuration;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
@@ -17,8 +17,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 @Configuration
-@ComponentScan(basePackages = {"configuration", "service", "controller"})
-@EnableJpaRepositories("repository")
+@ComponentScan(basePackages = {"Touristapp.configuration", "Touristapp.service", "Touristapp.controller"})
+@EnableJpaRepositories("Touristapp.repository")
 @EnableTransactionManagement
 public class SpringConfig {
 
@@ -38,7 +38,7 @@ public class SpringConfig {
         LocalContainerEntityManagerFactoryBean entityManager = new LocalContainerEntityManagerFactoryBean();
         entityManager.setDataSource(getDataSource());
         entityManager.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
-        entityManager.setPackagesToScan("model");
+        entityManager.setPackagesToScan("Touristapp/model");
 
         return entityManager;
     }
