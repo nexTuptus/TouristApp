@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tourist app all addresses</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Voivodeship</th>
+                <th>Community</th>
+                <th>Locality</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="address : ${addressList}">
+                < type="number" th:text="${address.id}"/>
+                <td th:text="${address.voivodeship}"/>
+                <td th:text="${address.community}"/>
+                <td th:text="${address.locality}"/>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
